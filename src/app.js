@@ -12,7 +12,6 @@ process.stdin.setEncoding('utf8')
 
 const checkBet = () => {
     if(user.betting){
-        console.log(user.willIncrease, chart.progressVar)
         if(user.willIncrease && chart.progressVar > 1 ||
             !user.willIncrease && chart.progressVar < 1){
             user.money += (user.betValue * 2)
