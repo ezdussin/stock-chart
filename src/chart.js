@@ -13,7 +13,7 @@ class Chart{
         this.chartsArray.push({
             x: this.x,
             y: this.y,
-            factor: this.chartFactor
+            factor: this.factor
         })
     }
 
@@ -38,7 +38,7 @@ class Chart{
     }
 
     calcLastVar(){
-        this.factor = this.y/this.chartsArray[this.chartsArray.length-1].y
+        this.factor = this.y/this.chartsArray[this.x-2].y
     }
 
     calcProgressVar(){

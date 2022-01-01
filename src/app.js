@@ -3,7 +3,7 @@ const User = require('./user')
 const Chart = require('./chart')
 const {waitInputMsg} = require('./gui')
 
-const user = new User('0x001')
+const user = new User('0x002')
 const chart = new Chart()
 
 process.stdin.setRawMode(true)
@@ -69,8 +69,8 @@ const displayChart = () => {
         }else{
             chart.calcProgressVar()
             checkBet()
-            storeData()
             clearInterval(timer)
+            storeData()
             waitKey()
         }
     }, 1000)
@@ -84,7 +84,7 @@ const storeData = () => {
             name: user.name,
             money: user.money
         },
-        chart_info: chart.chartsArray
+        charts: chart.chartsArray
     }
 
     const data = JSON.stringify(json, null, 2)
